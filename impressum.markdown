@@ -20,7 +20,6 @@ Kontakt über Mail : ferhat_ziba-at-gmx.de
 <br>Wenn Sie mich Kontaktieren wollen, bitte ersetzen Sie -at- durch ein @ zeichen. 
 
 
-Haftungsausschluss:
 
 Haftung für Inhalte
 -------------------
