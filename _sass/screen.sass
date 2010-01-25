@@ -13,29 +13,47 @@
 // To generate css equivalent to the blueprint css but with your configuration applied, uncomment:
 +blueprint 
 
+// Color Variable
+
+!darkblue=#0F2139 
+!lightblue=#2f7edd
+!darkgrey=#3c3c3c
+!darkred=#b1363a
+!yellow=#ebe741
+
+
+
 .clear 
   clear: both 
 
+ul
+  +no-bullets
 
 form
   +blueprint-form
 
 h1
-  color: #b1363a
+  color= !darkred
 h2, h3, h4, h5, h6, span
-  color: #2f7edd
+  color= !lightblue
 
 blockquote
   background-color: white
-  padding: 10px
+  padding: 16px
   margin: 10px
   border: #1Dc116 5px solid
   h1, h2, h3, h4, h5, h6, span
-    color: #2f7edd
+    color= !lightblue
+  img
+    float: left
+    margin-right: 5px
+    border: 2px solid
+    border-color= !darkblue
+    
 // Page layout can be done using mixins applied to your semantic classes and IDs:
 body
   
-  background-color: #0F2139
+  background-color= !darkblue  
   color: white
   font-family: Helvetica
   font-size: 1em
@@ -51,7 +69,7 @@ body
       padding: 20px
       text-align: center
       font-family: 'Georgia', 'DejaVu Serif', 'Times', 'Times New Roman', serif
-      color: #b1363a
+      color= !darkred
       position: relative
       font-size: 110px
       background-color: white
@@ -59,14 +77,14 @@ body
         position: relative
         font-size: 50px
         margin: 20px
-        color:  #2f7edd
+        color= !lightblue
         top: 10px
     margin-top: 50px
     ul.lavaLamp  
       +horizontal-list
       width: 100%
       height: 140px
-      border-bottom: 3px solid #3c3c3c
+      border-bottom: 3px solid !darkgrey
       position: relative
       background-color: white
       li 
@@ -82,17 +100,17 @@ body
           text-transform: uppercase
       li.back
         width: 9px
-        background-color: #ebe741
+        background-color= !yellow
         z-index: 8
         position: absolute
         left: 0
           
   h2
     a:visited, a
-      color: #2f7edd
+      color= !lightblue
       text-decoration: none
     a:hover
-      color: #3c3c3c
+      color= !darkgrey
            
   #sidebar
     // One third of the grid columns, rounding down. With 24 cols, this is 8.
@@ -107,14 +125,14 @@ body
     +column(!content_columns - 2, true)
   #content, #sidebar, #footer
     background: white
-    color: #3c3c3c
+    color= !darkgrey
   #author
     #img_wrapper
       margin-right: 5px
       float: left
       width: 84px
       height: 84px
-      border: #3c3c3c 1px solid
+      border: !darkgrey 1px solid
       img
         border: white 2px solid
     margin-top: 25px
