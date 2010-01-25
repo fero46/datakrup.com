@@ -1,0 +1,9 @@
+---
+exclude: ['Rakefile', 'README.markdown', 'config.rb']
+growl: true
+paginate: 5
+permalink: pretty
+pygments: true
+ftp_host: www.datakrup.com
+ftp_dir: /  
+

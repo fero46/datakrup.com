@@ -1,0 +1,127 @@
+@import compass
+// This import applies a global reset to any page that imports this stylesheet.
+@import blueprint/reset.sass
+// To configure blueprint, edit the partials/base.sass file.
+@import partials/base.sass
+// Import all the default blueprint modules so that we can access their mixins.
+@import blueprint
+// Import the non-default scaffolding module.
+@import blueprint/modules/scaffolding.sass
++blueprint-global-reset
+
+
+// To generate css equivalent to the blueprint css but with your configuration applied, uncomment:
++blueprint 
+
+.clear 
+  clear: both 
+
+
+form
+  +blueprint-form
+
+h1
+  color: #b1363a
+h2, h3, h4, h5, h6, span
+  color: #2f7edd
+
+blockquote
+  background-color: white
+  padding: 10px
+  margin: 10px
+  border: #1Dc116 5px solid
+  h1, h2, h3, h4, h5, h6, span
+    color: #2f7edd
+// Page layout can be done using mixins applied to your semantic classes and IDs:
+body
+  
+  background-color: #0F2139
+  color: white
+  font-family: Helvetica
+  font-size: 1em
+  +blueprint-utilities
+  #container
+    +container
+    #content_sidebar_wrapper
+      background-color: white
+  #header, #footer
+    +column(!blueprint_grid_columns)
+  #header
+    h1
+      padding: 20px
+      text-align: center
+      font-family: 'Georgia', 'DejaVu Serif', 'Times', 'Times New Roman', serif
+      color: #b1363a
+      position: relative
+      font-size: 110px
+      background-color: white
+      span
+        position: relative
+        font-size: 50px
+        margin: 20px
+        color:  #2f7edd
+        top: 10px
+    margin-top: 50px
+    ul.lavaLamp  
+      +horizontal-list
+      width: 100%
+      height: 140px
+      border-bottom: 3px solid #3c3c3c
+      position: relative
+      background-color: white
+      li 
+        margin-right: 20px
+        height: 140px
+        a, a:visited
+          font-size: 30px
+          text-decoration: none
+          color: black
+          position: relative
+          overflow: hidden
+          z-index: 10
+          text-transform: uppercase
+      li.back
+        width: 9px
+        background-color: #ebe741
+        z-index: 8
+        position: absolute
+        left: 0
+          
+  h2
+    a:visited, a
+      color: #2f7edd
+      text-decoration: none
+    a:hover
+      color: #3c3c3c
+           
+  #sidebar
+    // One third of the grid columns, rounding down. With 24 cols, this is 8.
+    !sidebar_columns = floor(!blueprint_grid_columns / 3) 
+    +column(!sidebar_columns  )
+  #content
+    // Two thirds of the grid columns, rounding up.
+    // With 24 cols, this is 16.
+    padding: 30px
+    !content_columns = ceil(2 * !blueprint_grid_columns / 3)
+    // true means it's the last column in the row
+    +column(!content_columns - 2, true)
+  #content, #sidebar, #footer
+    background: white
+    color: #3c3c3c
+  #author
+    #img_wrapper
+      margin-right: 5px
+      float: left
+      width: 84px
+      height: 84px
+      border: #3c3c3c 1px solid
+      img
+        border: white 2px solid
+    margin-top: 25px
+    font-size: 0.8em
+  #footer
+    +column(!blueprint_grid_columns)
+    padding-right: 0px
+    margin-bottom: 30px
+    #about
+      padding: 25px
