@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+   
+	<link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" />
+	<link href="/stylesheets/print.css" media="print" rel="stylesheet" type="text/css" />
+	<!--[if lt IE 8]>
+		<link href="/stylesheets/ie.css" media="screen, projection" rel="stylesheet" type="text/css" />
+		<![endif]-->
+		<title>{{ page.title }}</title>
+
+	</head>
+
+	<body>
+		<div id="container">
+			<div id="header">
+				<h1 id="roundme">Datakrup<span>dot</span>com</h1>
+				{% include menu.markdown %}	
+			</div>
+			<div class="clear"></div>
+			<div id="content_sidebar_wrapper">
+				<div id="content">
+					<h1>{{ page.title }}</h1>
+					{{ content }}
+				</div>
+				<div id="sidebar">
+				    
+					{% include author.markdown %}
+				    
+				</div>
+				<div class="clear">	</div>
+			</div>
+			<div id="footer">
+				<div id="about">
+				<pre class="brush: ruby">
+					
+						(0..1).map{|n| n + 4}.reduce(88){|x,y| x - 23} # => 42
+					
+				</pre><br>
+				<a href="/impressum">impress</a>
+				
+				</div>
+			</div>
+		</div>
+		<script src="http://www.google.com/jsapi"></script>
+		<script>
+		google.load("jquery", "1");
+		</script>
+		<script src="/javascript/corner.js"></script>
+		<script src="/javascript/jquery.lavalamp.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="/javascript/jquery.easing.min.js" type="text/javascript" charset="utf-8"></script>
+		<!-- Include required JS files -->
+		<script type="text/javascript" src="/javascript/src/shCore.js"></script>
+		<!-- At least one brush, here we choose JS. You need to include a brush for every language you want to highlight -->
+		<script type="text/javascript" src="/javascript/scripts/shBrushRuby.js"></script>
+		<!-- Include *at least* the core style and default theme -->
+		<link href="/javascript/styles/shCore.css" rel="stylesheet" type="text/css" />
+		<link href="/javascript/styles/shThemeDefault.css" rel="stylesheet" type="text/css" />
+		<script type="text/javascript" charset="utf-8">
+		$(document).ready(function(){
+			$('#roundme').corner("15px");
+			$('#footer').corner("15px bottom");
+			SyntaxHighlighter.all()
+			$(function() { $(".lavaLamp").lavaLamp({ fx: "backout", speed: 700 })});
+		});
+		</script>
+	</body>
+	</html>

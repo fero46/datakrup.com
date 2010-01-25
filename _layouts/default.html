@@ -16,10 +16,7 @@
 		<div id="container">
 			<div id="header">
 				<h1 id="roundme">Datakrup<span>dot</span>com</h1>
-				<ul class="lavaLamp" id="menu">
-					<li class="current"><a href="/">Blog</a></li>
-					<li><a href="/about">About Me</a></li>
-				</ul>	
+				{% include menu.markdown %}
 			</div>
 			<div class="clear"></div>
 			<div id="content_sidebar_wrapper">
@@ -27,24 +24,9 @@
 					{{ content }}
 				</div>
 				<div id="sidebar">
-				    
-					<div id="author">
-						<h5>About me</h5>
-						<div id="img_wrapper">
-							<img src="http://www.gravatar.com/avatar/1489077b43e1bcbfaa4bdb60f0c5f9da.png">
-					    </div>
-					   	name: <em>Ferhat Ziba</em> <br />
-						Twitter: <em><a href="http://www.twitter.com/fero46">follow</a></em><br />
-						Github: <em><a href="http://github.com/fero46">fero46</a></em><br>
-						Locate at: <em>Hamburg, Germany</em><br />
-						<br />
-						<br />
-
-						Working for: <em><a href="http://www.werum.de">Werum Software & Systems</a></em><br />
-						Favorite Programming Language: <em><a href="http://www.ruby-lang.org">Ruby</a>, <a href="http://java.sun.com">Java</a></em><br />
-						Favorite OS as Desktop: <a href="http://www.apple.com">OS X</a><br />
-						Favorite OS for Server: <a href="http://www.ubuntu.com"> Ubuntu</a>
-					</div>
+				    {% include author.markdown %}
+					
+					
 				</div>
 				<div class="clear">	</div>
 			</div>
@@ -76,9 +58,41 @@
 		<link href="/javascript/styles/shThemeDefault.css" rel="stylesheet" type="text/css" />
 		<script type="text/javascript" charset="utf-8">
 		$(document).ready(function(){
+			function imagePreview(){	
+				/* CONFIG */
+
+					xOffset = 10;
+					yOffset = 30;
+
+					// these 2 variable determine popup's distance from the cursor
+					// you might want to adjust to get the right result
+
+				/* END CONFIG */
+				$("a.preview").hover(function(e){
+					this.t = this.title;
+					this.title = "";	
+					var c = (this.t != "") ? "<br/>" + this.t : "";
+					$("body").append("<p id='preview'><img src='"+ this.href +"' alt='Image preview' />"+ c +"</p>");								 
+					$("#preview")
+						.css("top",(e.pageY - xOffset) + "px")
+						.css("left",(e.pageX + yOffset) + "px")
+						.fadeIn("fast");						
+			    },
+				function(){
+					this.title = this.t;	
+					$("#preview").remove();
+			    });	
+				$("a.preview").mousemove(function(e){
+					$("#preview")
+						.css("top",(e.pageY - xOffset) + "px")
+						.css("left",(e.pageX + yOffset) + "px");
+				});			
+			};
 			$('#roundme').corner("15px");
 			$('#footer').corner("15px bottom");
-			SyntaxHighlighter.all()
+			SyntaxHighlighter.all();
+			imagePreview();
+			
 			$(function() { $(".lavaLamp").lavaLamp({ fx: "backout", speed: 700 })});
 		});
 		</script>
