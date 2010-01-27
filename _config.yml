@@ -1,5 +1,5 @@
 ---
-exclude: ['Rakefile', 'README', 'config.rb']
+exclude: ['Rakefile', 'README', 'config.rb', 'ftp_config']
 growl: true
 paginate: 5
 permalink: pretty
