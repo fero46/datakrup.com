@@ -1,0 +1,93 @@
+---
+layout: post
+title: Create multiple objects in Java.
+page.active-blog: current
+---
+
+Let's create some objects. We have three classes.
+
+<pre class="brush: java">
+	public class Human 
+	{
+		private String name;
+		
+		public Human(){
+			name="";
+		}
+		
+		public Human(String name)
+		{
+			
+		}
+		
+		public String getName()
+		{
+			return this.name;
+		}
+		
+		public void setName(String name)
+		{
+			this.name=name;
+		}
+	}
+</pre>
+
+<pre class="brush: java">
+	public class Man extends Human
+	{
+		
+	}
+</pre>
+
+<pre class="brush: java">
+	public class Woman extends Human
+	{
+		
+	}
+</pre>
+
+<pre class="brush: java">
+	List<Woman> women = new ArrayList<Woman>();
+	List<Man> men = new ArrayList<Man>();
+	
+	
+	for(int i = 0; i < 100; i++)
+	{
+		womans.add(new Woman());
+		men.add(new Man());
+	}
+</pre>
+
+Now if you do much thing like this you write much for-loops. I found a solution for this kind of problem without writing a new for loop. Lets add a Method in the Human class.
+
+<pre class= "brush: java">
+	public static List<Human> getInstances(Class<? extends Human> clazz, int counter)
+	{
+		List humans = new ArrayList<Human>();
+		for(int i=0;i< counter; i++){
+			humans.add(clazz.newInstance());
+		}
+		return humans;
+	}
+</pre>
+
+Now you can us this for creating humans.
+
+<pre class="brush: java">
+	List<Men> men = Human.getInstances(Men.class,10);
+	List<Women> men = Human.getInstances(Women.class,10)
+</pre>
+
+If you have a specific constructor you can use this
+
+<pre class= "brush: java">
+	public static List<Human> getInstances(Class<? extends Human> clazz,String name, int counter)
+	{
+		List humans = new ArrayList<Human>();
+		for(int i=0;i< counter; i++){
+			humans.add(clazz.getDeclaredConstructor(String.class)
+				.newInstance(name));
+		}
+		return humans;
+	}
+</pre>
