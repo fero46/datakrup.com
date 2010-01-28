@@ -64,14 +64,19 @@ Now if you do much thing like this you write much for-loops. I found a solution 
 	public static List<Human> getInstances(Class<? extends Human> clazz, int counter)
 	{
 		List humans = new ArrayList<Human>();
-		for(int i=0;i< counter; i++){
+		
+		for(int i=0;i< counter; i++)
+		{
+			
 			humans.add(clazz.newInstance());
+		
 		}
+		
 		return humans;
 	}
 </pre>
 
-Now you can us this for creating humans.
+Now you can use this for creating humans.
 
 <pre class="brush: java">
 	List<Men> men = Human.getInstances(Men.class,10);
@@ -84,9 +89,13 @@ If you have a specific constructor you can use this
 	public static List<Human> getInstances(Class<? extends Human> clazz,String name, int counter)
 	{
 		List humans = new ArrayList<Human>();
-		for(int i=0;i< counter; i++){
+		
+		for(int i=0;i< counter; i++)
+		{
+			
 			humans.add(clazz.getDeclaredConstructor(String.class)
 				.newInstance(name));
+		
 		}
 		return humans;
 	}
