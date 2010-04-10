@@ -5,7 +5,7 @@ page.active-blog: current
 ---
 
 
-Sometimes you need a fast way to insert large amount of data in a mysql database. One way to do that is to use a PreparedStatement and addBatch. But there can be a pittfall if you don't controll your the database commits. Here's a example :
+Sometimes you need a fast way to insert large amount of data in a mysql database. One way to do that is to use a PreparedStatement and addBatch. But there can be a pittfall if you don't controll your database commits. Here's a example :
  
 <pre class="brush: java">
 Class.forName("com.mysql.jdbc.Driver");
