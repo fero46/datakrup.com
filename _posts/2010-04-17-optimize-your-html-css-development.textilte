@@ -1,0 +1,14 @@
+---
+layout: post
+title: Optimize your html/css development
+page.active-blog: current
+---
+
+When you develope a website, you are the most of the time with refreshing the browser. But instante of every time refresh your browser, you can simply add an http redirect while you design your webpage.
+
+For example your website you are designing is called "index.html". You simply add this 
+<pre class="brush: xml">
+&lt;meta http-equiv="Refresh" content="2; URL=index.html" \> 
+</pre>
+in your header section. And voila - no more refresh the browser. The browser is refreshing automaticly.
+<br/>

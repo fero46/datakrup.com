@@ -10,6 +10,7 @@ google.load("jquery", "1");
 <!-- At least one brush, here we choose JS. You need to include a brush for every language you want to highlight -->
 <script type="text/javascript" src="/javascript/scripts/shBrushRuby.js"></script>
 <script type="text/javascript" src="/javascript/scripts/shBrushJava.js"></script>
+<script type="text/javascript" src="/javascript/scripts/shBrushXML.js"></script>
 
 <!-- Include *at least* the core style and default theme -->
 <link href="/javascript/styles/shCore.css" rel="stylesheet" type="text/css" />
