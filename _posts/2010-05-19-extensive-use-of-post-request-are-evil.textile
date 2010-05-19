@@ -1,0 +1,19 @@
+---
+layout: post
+title: Extensive use of post request are evil
+page.active-blog: current
+---
+So one guy say: "I want a website and the domain and url should never change." <br> The webdeveloper say: "Sure ? Okey - no problem". <br/><br/>
+Now what the webdeveloper has some options. First option is to make the site normal and put the  in to an iframe, second option is to make a ajax app (for example with <a href="http://code.google.com/intl/de-DE/webtoolkit/">Google Webtoolkit</a>) and  the third option and maybe the worst idea ever is to make for every link javascript event that execute a hidden form to the main site. 
+<br/>
+*So why this is this evil.*<br/><br/>
+<ol style="margin-top: -60px;">
+  <li style="margin-bottom:-10px">You have some problems with this.</li>
+  <li style="margin-bottom:-10px">The backbutton doesn't work and refreshing the sites sucks.</li>
+  <li style="margin-bottom:-10px">Development sucked because of cached data in every browser</li>
+  <li style="margin-bottom:-10px">You break the HTTP Protokoll:  Get for getting Data, Post for send data, Put for ...</li>
+  <li style="margin-bottom:-10px">Users can't share links.</li>
+  <li style="margin-bottom:-10px">Google's pagerank might not work</li>  
+</ol>
+
+Maybe you think different about this. My opinion is  *Extensive use of post request are evil*
