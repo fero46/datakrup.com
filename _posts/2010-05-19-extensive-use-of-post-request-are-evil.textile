@@ -8,8 +8,7 @@ Now what the webdeveloper has some options. First option is to make the site nor
 <br/>
 *So why this is this evil.*<br/><br/>
 <ol style="margin-top: -60px;">
-  <li style="margin-bottom:-10px">You have some problems with this.</li>
-  <li style="margin-bottom:-10px">The backbutton doesn't work and refreshing the sites sucks.</li>
+   <li style="margin-bottom:-10px">The backbutton doesn't work and refreshing the sites sucks.</li>
   <li style="margin-bottom:-10px">Development sucked because of cached data in every browser</li>
   <li style="margin-bottom:-10px">You break the HTTP Protokoll:  Get for getting Data, Post for send data, Put for ...</li>
   <li style="margin-bottom:-10px">Users can't share links.</li>
