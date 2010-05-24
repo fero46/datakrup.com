@@ -15,6 +15,22 @@ google.load("jquery", "1");
 <!-- Include *at least* the core style and default theme -->
 <link href="/javascript/styles/shCore.css" rel="stylesheet" type="text/css" />
 <link href="/javascript/styles/shThemeDefault.css" rel="stylesheet" type="text/css" />
+
+<script type="text/javascript">
+ //<![CDATA[
+ (function() {
+ 	var links = document.getElementsByTagName('a');
+ 	var query = '?';
+ 	for(var i = 0; i < links.length; i++) {
+ 	if(links[i].href.indexOf('#disqus_thread') >= 0) {
+ 		query += 'url' + i + '=' + encodeURIComponent(links[i].href) + '&';
+ 	}
+ 	}
+ 	document.write('<script charset="utf-8" type="text/javascript" src="http://disqus.com/forums/system46/get_num_replies.js' + query + '"></' + 'script>');
+ })();
+ //]]>
+ </script>
+
 <script type="text/javascript" charset="utf-8">
 $(document).ready(function(){
 	$('#roundme').corner("15px");

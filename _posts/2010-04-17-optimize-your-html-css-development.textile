@@ -3,6 +3,7 @@ layout: post
 title: Optimize your html/css development
 page.active-blog: current
 ---
+<a href="{{ page.url }}#disqus_thread"></a>
 
 When you develope a website, you are the most of the time with refreshing the browser. But instante of every time refresh your browser, you can simply add an http redirect while you design your webpage.
 

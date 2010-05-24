@@ -3,6 +3,7 @@ layout: post
 title: Create multiple objects in Java.
 page.active-blog: current
 ---
+<a href="{{ page.url }}#disqus_thread"></a>
 
 Let's create some objects. We have three classes.
 

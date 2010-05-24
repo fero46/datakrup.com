@@ -3,6 +3,8 @@ layout: post
 title: Extensive use of post request are evil
 page.active-blog: current
 ---
+<a href="{{ page.url }}#disqus_thread"></a>
+
 So one guy say: "I want a website and the domain and url should never change." <br> The webdeveloper say: "Sure ? Okey - no problem". <br/><br/>
 Now what the webdeveloper has some options. First option is to make the site normal and put the  in to an iframe, second option is to make a ajax app (for example with <a href="http://code.google.com/intl/de-DE/webtoolkit/">Google Webtoolkit</a>) and  the third option and maybe the worst idea ever is to make for every link javascript event that execute a hidden form to the main site. 
 <br/>
